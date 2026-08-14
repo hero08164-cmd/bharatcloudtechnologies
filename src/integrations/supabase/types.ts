@@ -14,16 +14,325 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_messages: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          subject: string | null
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          subject?: string | null
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          subject?: string | null
+        }
+        Relationships: []
+      }
+      product_changelog: {
+        Row: {
+          changes: string | null
+          created_at: string
+          id: string
+          product_id: string
+          release_date: string | null
+          title: string | null
+          version: string
+        }
+        Insert: {
+          changes?: string | null
+          created_at?: string
+          id?: string
+          product_id: string
+          release_date?: string | null
+          title?: string | null
+          version: string
+        }
+        Update: {
+          changes?: string | null
+          created_at?: string
+          id?: string
+          product_id?: string
+          release_date?: string | null
+          title?: string | null
+          version?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "product_changelog_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      product_features: {
+        Row: {
+          created_at: string
+          description: string | null
+          display_order: number
+          icon: string | null
+          id: string
+          product_id: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          icon?: string | null
+          id?: string
+          product_id: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          icon?: string | null
+          id?: string
+          product_id?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "product_features_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      product_screenshots: {
+        Row: {
+          created_at: string
+          display_order: number
+          id: string
+          image_url: string
+          product_id: string
+          title: string | null
+        }
+        Insert: {
+          created_at?: string
+          display_order?: number
+          id?: string
+          image_url: string
+          product_id: string
+          title?: string | null
+        }
+        Update: {
+          created_at?: string
+          display_order?: number
+          id?: string
+          image_url?: string
+          product_id?: string
+          title?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "product_screenshots_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      products: {
+        Row: {
+          apk_url: string | null
+          apkpure_url: string | null
+          banner_url: string | null
+          category: string | null
+          created_at: string
+          description: string | null
+          display_order: number
+          documentation_url: string | null
+          github_url: string | null
+          icon_url: string | null
+          id: string
+          is_featured: boolean
+          logo_url: string | null
+          name: string
+          play_store_url: string | null
+          privacy_url: string | null
+          release_date: string | null
+          seo_description: string | null
+          seo_title: string | null
+          short_description: string | null
+          slug: string
+          status: Database["public"]["Enums"]["product_status"]
+          terms_url: string | null
+          updated_at: string
+          version: string | null
+          website_url: string | null
+        }
+        Insert: {
+          apk_url?: string | null
+          apkpure_url?: string | null
+          banner_url?: string | null
+          category?: string | null
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          documentation_url?: string | null
+          github_url?: string | null
+          icon_url?: string | null
+          id?: string
+          is_featured?: boolean
+          logo_url?: string | null
+          name: string
+          play_store_url?: string | null
+          privacy_url?: string | null
+          release_date?: string | null
+          seo_description?: string | null
+          seo_title?: string | null
+          short_description?: string | null
+          slug: string
+          status?: Database["public"]["Enums"]["product_status"]
+          terms_url?: string | null
+          updated_at?: string
+          version?: string | null
+          website_url?: string | null
+        }
+        Update: {
+          apk_url?: string | null
+          apkpure_url?: string | null
+          banner_url?: string | null
+          category?: string | null
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          documentation_url?: string | null
+          github_url?: string | null
+          icon_url?: string | null
+          id?: string
+          is_featured?: boolean
+          logo_url?: string | null
+          name?: string
+          play_store_url?: string | null
+          privacy_url?: string | null
+          release_date?: string | null
+          seo_description?: string | null
+          seo_title?: string | null
+          short_description?: string | null
+          slug?: string
+          status?: Database["public"]["Enums"]["product_status"]
+          terms_url?: string | null
+          updated_at?: string
+          version?: string | null
+          website_url?: string | null
+        }
+        Relationships: []
+      }
+      site_settings: {
+        Row: {
+          company_name: string
+          contact_email: string | null
+          description: string | null
+          founded_year: number | null
+          github_url: string | null
+          id: string
+          instagram_url: string | null
+          linkedin_url: string | null
+          logo_url: string | null
+          tagline: string | null
+          updated_at: string
+          website_url: string | null
+          x_url: string | null
+          youtube_url: string | null
+        }
+        Insert: {
+          company_name?: string
+          contact_email?: string | null
+          description?: string | null
+          founded_year?: number | null
+          github_url?: string | null
+          id?: string
+          instagram_url?: string | null
+          linkedin_url?: string | null
+          logo_url?: string | null
+          tagline?: string | null
+          updated_at?: string
+          website_url?: string | null
+          x_url?: string | null
+          youtube_url?: string | null
+        }
+        Update: {
+          company_name?: string
+          contact_email?: string | null
+          description?: string | null
+          founded_year?: number | null
+          github_url?: string | null
+          id?: string
+          instagram_url?: string | null
+          linkedin_url?: string | null
+          logo_url?: string | null
+          tagline?: string | null
+          updated_at?: string
+          website_url?: string | null
+          x_url?: string | null
+          youtube_url?: string | null
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "moderator" | "user"
+      product_status: "draft" | "published" | "archived"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +459,9 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "moderator", "user"],
+      product_status: ["draft", "published", "archived"],
+    },
   },
 } as const
