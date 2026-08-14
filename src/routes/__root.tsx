@@ -88,6 +88,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Bharat Cloud Technologies" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Bharat Cloud Technologies | AI, Apps & Automation" },
+      { name: "twitter:title", content: "Bharat Cloud Technologies | AI, Apps & Automation" },
+      { property: "og:description", content: "Bharat Cloud Technologies builds useful software, applications, AI tools and automation products from India." },
+      { name: "twitter:description", content: "Bharat Cloud Technologies builds useful software, applications, AI tools and automation products from India." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/556aafa43cb27af5faf2958b042bb6f4/id-preview-5c727cdf--342839a8-e188-4d0b-8b39-2439448ada26.lovable.app-1786723679900.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/556aafa43cb27af5faf2958b042bb6f4/id-preview-5c727cdf--342839a8-e188-4d0b-8b39-2439448ada26.lovable.app-1786723679900.png" },
     ],
     links: [
       {
