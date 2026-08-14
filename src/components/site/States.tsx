@@ -9,7 +9,13 @@ export function LoadingState({ label = "Loading…" }: { label?: string }) {
   );
 }
 
-export function ErrorState({ error, label }: { error?: unknown; label?: string }) {
+export function ErrorState({
+  error,
+  label,
+}: {
+  error?: unknown;
+  label?: string | undefined;
+}) {
   const message =
     label ??
     (error instanceof Error && error.message
@@ -24,7 +30,13 @@ export function ErrorState({ error, label }: { error?: unknown; label?: string }
   );
 }
 
-export function EmptyState({ title, description }: { title: string; description?: string }) {
+export function EmptyState({
+  title,
+  description,
+}: {
+  title: string;
+  description?: string | undefined;
+}) {
   return (
     <div className="rounded-xl border border-dashed border-border bg-card/50 p-10 text-center">
       <Inbox className="mx-auto size-6 text-muted-foreground" />
