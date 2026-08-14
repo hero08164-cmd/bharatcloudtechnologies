@@ -7,7 +7,7 @@ import { EmptyState, ErrorState, LoadingState } from "@/components/site/States";
 import { Input } from "@/components/ui/input";
 import { usePublishedProducts } from "@/lib/cms";
 
-export const Route = createFileRoute("/products")({
+export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
       { title: "Products | Bharat Cloud Technologies" },
