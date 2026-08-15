@@ -1,0 +1,2 @@
+update public.products set logo_url = '/__l5e/assets-v1/6022df71-1426-414b-8553-d8d81c3c894f/promptverse.png', icon_url = '/__l5e/assets-v1/6022df71-1426-414b-8553-d8d81c3c894f/promptverse.png' where slug = 'prompt-verse';
+update public.products set logo_url = '/__l5e/assets-v1/f0c29aa8-8760-4232-b4a7-f6ee22ed4289/tubepilot.png', icon_url = '/__l5e/assets-v1/f0c29aa8-8760-4232-b4a7-f6ee22ed4289/tubepilot.png' where slug = 'tubepilot';
