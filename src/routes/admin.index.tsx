@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { Archive, FileEdit, Image, PlusCircle, Settings, Sparkles } from "lucide-react";
+import { Archive, FileEdit, Image, Mail, PlusCircle, Settings, Sparkles } from "lucide-react";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { ErrorState, LoadingState } from "@/components/site/States";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
+import { fetchMessages } from "@/routes/admin.messages";
 import type { Product } from "@/lib/cms";
 
 export const Route = createFileRoute("/admin/")({
