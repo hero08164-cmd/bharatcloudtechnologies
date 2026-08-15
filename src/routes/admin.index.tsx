@@ -26,6 +26,8 @@ function AdminDashboard() {
     },
   });
 
+  const messages = useQuery({ queryKey: ["admin", "messages"], queryFn: fetchMessages });
+
   const total = data?.length ?? 0;
   const published = data?.filter((p) => p.status === "published").length ?? 0;
   const drafts = data?.filter((p) => p.status === "draft").length ?? 0;
@@ -38,12 +40,14 @@ function AdminDashboard() {
 
       {data && (
         <>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             <Stat label="Total products" value={total} Icon={Sparkles} />
             <Stat label="Published" value={published} Icon={Sparkles} />
             <Stat label="Drafts" value={drafts} Icon={FileEdit} />
             <Stat label="Archived" value={archived} Icon={Archive} />
+            <Stat label="Enquiries" value={messages.data?.length ?? 0} Icon={Mail} />
           </div>
+
 
           <div className="mt-8 flex flex-wrap gap-2">
             <Button asChild>
