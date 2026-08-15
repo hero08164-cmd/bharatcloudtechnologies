@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Image, LayoutDashboard, LogOut, Package, Settings, ShieldAlert } from "lucide-react";
+import { Image, LayoutDashboard, LogOut, Mail, Package, Settings, ShieldAlert } from "lucide-react";
 import { toast } from "sonner";
 import logo from "@/assets/bct-logo.png";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,7 @@ import { LoadingState } from "@/components/site/States";
 const LINKS = [
   { to: "/admin", label: "Dashboard", Icon: LayoutDashboard, exact: true },
   { to: "/admin/products", label: "Products", Icon: Package, exact: false },
+  { to: "/admin/messages", label: "Messages", Icon: Mail, exact: false },
   { to: "/admin/media", label: "Media", Icon: Image, exact: false },
   { to: "/admin/settings", label: "Settings", Icon: Settings, exact: false },
 ] as const;
